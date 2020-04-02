@@ -1,24 +1,28 @@
-<div class="container">
+<div class="d-flex justify-content-between border-bottom mb-4">
   <h4><%= @cocktail.name %></h4>
-  <br>
+  <%= link_to 'Back', cocktails_path, class: "btn btn-primary" %>
+</div>
+
+<div class="border-bottom mb-4">
   <h5>Doses</h5>
   <ul>
-      <% @cocktail.doses.each do |dose| %>
-        <li>
-          <%= dose.description %>
-          <%= dose.ingredient.name %>
-          <%= link_to "🗑", dose_path(dose), method: :delete, class: "btn btn-link" %>
-        </li>
-      <% end %>
-   </ul>
+    <% @cocktail.doses.each do |dose| %>
+      <li>
+        <%= dose.description %>
+        <%= dose.ingredient.name %>
+        <%= link_to "🗑", dose_path(dose), method: :delete, class: "btn btn-link" %>
+      </li>
+    <% end %>
+  </ul>
+</div>
 
-    <br>
+<div class="border-bottom">
+  <h5>New Dose</h5>
     <%= simple_form_for [@cocktail, @dose] do |f| %>
       <%= f.input :description %>
       <%= f.association :ingredient %>
       <%= f.submit "Submit dose", class: "btn btn-primary" %>
     <% end %>
-
-
-  <%= link_to 'Back', cocktails_path, class: "btn btn-primary" %>
 </div>
+
+
