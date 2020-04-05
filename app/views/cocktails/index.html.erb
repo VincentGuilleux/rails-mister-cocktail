@@ -1,27 +1,29 @@
-<div class="d-flex justify-content-between border-bottom">
-  <h1>cocktails</h1>
-  <%= link_to 'New cocktail', new_cocktail_path, class: "btn btn-primary" %>
-</div>
+<div class="container">
+  <div class="d-flex justify-content-between border-bottom">
+    <h2>cocktails</h2>
+    <%= link_to 'New cocktail', new_cocktail_path, class: "btn btn-primary" %>
+  </div>
 
 
-<!-- <%= cl_image_tag("https://res.cloudinary.com/dlspzrlvr/image/upload/v1585915731/jaisxdtanlcmyru2y3of.jpg", alt: "Coucou",
-      width: 400, height: 300, crop: :fill) %> -->
+  <!-- <%= cl_image_tag("https://res.cloudinary.com/dlspzrlvr/image/upload/v1585915731/jaisxdtanlcmyru2y3of.jpg", alt: "Coucou",
+        width: 400, height: 300, crop: :fill) %> -->
 
-<div class="container my-5">
-  <div class="row">
-    <div class="col">
-      <div class="cards">
-        <% @cocktails.each do |cocktail| %>
-          <div class="card-category">
-            <div class="card-tags">
-            <h3> <%= cocktail.name %> </h3>
-          <% if cocktail.photo.attached? %>
-            <%= cl_image_tag cocktail.photo.key, height: 100, width: 200, crop: :fill %>
-          <% end %>
-            <%= link_to 'Show', cocktail, class: "btn btn-link" %>
+  <div class="container my-5">
+    <div class="row">
+      <div class="col">
+        <div class="cards">
+          <% @cocktails.each do |cocktail| %>
+            <div class="card-category">
+              <div class="card-tags">
+              <h3> <%= cocktail.name %> </h3>
+            <% if cocktail.photo.attached? %>
+              <%= cl_image_tag cocktail.photo.key, height: 100, width: 200, crop: :fill %>
+            <% end %>
+              <%= link_to 'Show', cocktail, class: "btn btn-link" %>
+              </div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
