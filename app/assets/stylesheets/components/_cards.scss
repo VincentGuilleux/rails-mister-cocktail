@@ -1,16 +1,33 @@
-.card-tags {
-  position: relative;
+.card-tag {
+  position: absolute;
   bottom: 8px;
   left: 8px;
-  width: 80%;
+  width: 100%;
+  color: white;
   span {
     background: $blue;
     font-size: .7em;
     padding: 2px 4px;
     border-radius: 3px;
   }
-  a {
-    color: blue;
+}
+
+
+.card-link {
+  font-size: 16px;
+  color: white;
+  border-radius: 50%;
+  // border: 1px solid white;s
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  opacity: 0.8;
+  // transform: rotatse(45deg);
+  font-weight: lighter;
+  &:hover {
+    color: white;
+    text-decoration: none;
+    opacity: 1;
   }
 }
 
@@ -18,7 +35,7 @@
   position: relative;
   background-size: cover;
   background-position: center;
-  background-color: #f0f0f0;
+  background-color: rgb(250,250,250);
   height: 180px;
   display: flex;
   justify-content: center;
@@ -29,26 +46,6 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
-
-.card-remove-link {
-  font-size: 16px;
-  color: white;
-  border-radius: 50%;
-  // border: 1px solid white;s
-  height: 30px;
-  width: 30px;
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  opacity: 0.8;
-  // transform: rotatse(45deg);
-  font-weight: lighter;
-  &:hover {
-    color: white;
-    text-decoration: none;
-    opacity: 1;
-  }
 }
 
 .cards {
